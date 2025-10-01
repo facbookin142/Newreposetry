@@ -1,156 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apps Download</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #e6faff);
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agents Loots</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    /* Top banner */
-    .top-banner {
-      width: 100%;
-      background: linear-gradient(90deg, #ffe57f, #ffb74d);
-      color: #222;
-      text-align: center;
-      padding: 16px 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-weight: bold;
-      font-size: 20px;
-      letter-spacing: 0.5px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 95vh;
+    width: 90vw;
+    max-width: 1000px;
+    box-sizing: border-box;
+  }
 
-    /* Container for apps */
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      max-width: 1100px;
-      margin: 50px auto;
-      gap: 30px;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
+  .page-title {
+    margin-top: 0;
+    font-size: 4vw;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    text-shadow: 0 0 15px rgba(255,0,100,0.4), 0 0 25px rgba(255,0,100,0.3);
+  }
 
-    /* Each app card */
-    .app-box {
-      flex: 1;
-      background: white;
-      border-radius: 20px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .app-box:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
+  .page-subtitle {
+    font-size: 2vw;
+    text-align: center;
+    background: linear-gradient(90deg, #42e695, #3bb2b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(59,178,184,0.3);
+    margin-bottom: 20px;
+  }
 
-    .app-box h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #222;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
+  @keyframes shine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
 
-    .app-box img {
-      width: 130px;
-      height: auto;
-      margin: 0 auto 20px;
-      transition: transform 0.3s ease;
-      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
-    }
-    .app-box img:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
 
-    /* Download button */
-    .download-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, #42a5f5, #1e88e5);
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: bold;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(30,136,229,0.4);
-      transition: 0.3s;
-    }
-    .download-btn:hover {
-      background: linear-gradient(135deg, #1e88e5, #1565c0);
-      box-shadow: 0 6px 16px rgba(21,101,192,0.5);
-      transform: scale(1.05);
-    }
+  .app-box {
+    background: white;
+    border-radius: 20px;
+    padding: 2vw;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  .app-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
 
-    /* Telegram button */
-    .telegram-btn {
-      display: block;
-      width: fit-content;
-      margin: 40px auto 70px;
-      padding: 18px 40px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(0,114,255,0.4);
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    .telegram-btn:hover {
-      transform: scale(1.08);
-      background: linear-gradient(135deg, #0072ff, #004ecb);
-      box-shadow: 0 8px 25px rgba(0,114,255,0.6);
-    }
+  .app-box img {
+    width: 20vw;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
+  }
 
-    /* Pulse animation for telegram button */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0,114,255,0.6); }
-      70% { box-shadow: 0 0 0 18px rgba(0,114,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(0,114,255,0); }
-    }
+  .signup-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #28a745, #00c853);
+    color: white;
+    text-decoration: none;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 6px 14px rgba(0,200,83,0.3);
+    transition: 0.3s;
+  }
+  .signup-btn:hover {
+    background: linear-gradient(135deg, #00c853, #28a745);
+    transform: scale(1.08);
+  }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container { flex-direction: column; }
-      .app-box { width: 100%; }
-    }
-  </style>
+  .telegram-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,114,255,0.3);
+    transition: 0.3s;
+  }
+  .telegram-btn:hover {
+    transform: scale(1.1);
+  }
+
+  @media(max-width: 768px) {
+    .page-title { font-size: 8vw; }
+    .page-subtitle { font-size: 4vw; }
+    .container { flex-direction: row; gap: 10px; }
+    .app-box img { width: 35vw; }
+    .signup-btn { font-size: 3vw; }
+    .telegram-btn { font-size: 4vw; padding: 10px 25px; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="top-banner">
-    Complete registration on both sites to get unlimited google map agent links 💸
-  </div>
-
-  <div class="container">
-    <div class="app-box">
-      <h2>Earn Box</h2>
-      <img src="https://iili.io/KMe5Ce1.md.png" alt="Earn Box Logo">
-      <a href="https://web.earnbox.net/h6/#/?salt=hUQRypbolK" class="download-btn">⬇ Download</a>
+  <div class="wrapper">
+    <div>
+      <div class="page-title">Agents Loots</div>
+      <div class="page-subtitle">✨ Offers Loots ✨</div>
     </div>
 
-    <div class="app-box">
-      <h2>IND Club</h2>
-      <img src="https://iili.io/KMeaQj9.png" alt="IND Club Logo">
-      <a href="https://indclub8.com?code=34UGU5TBR92&t=1758967448" class="download-btn">⬇ Download</a>
-    </div>
-  </div>
+    <div class="container">
+      <!-- Left App: Earn Box -->
+      <div class="app-box">
+        <h2>Earn Box</h2>
+        <img src="https://iili.io/KMe5Ce1.md.png" alt="Earn Box Logo">
+        <br>
+        <a href="https://web.earnbox.net/h6/#/?salt=hUQRypbolK" class="signup-btn">💰 Sign Up & Get ₹100</a>
+      </div>
 
-  <a href="https://t.me/+8h1qaOW-l3o4NzM1" class="telegram-btn">🚀 Join Now on Telegram</a>
+      <!-- Right App: IND Club -->
+      <div class="app-box">
+        <h2>IND Club</h2>
+        <img src="https://iili.io/KMeaQj9.png" alt="IND Club Logo">
+        <br>
+        <a href="https://indclub8.com?code=34UGU5TBR92&t=1758967448" class="signup-btn">💰 Sign Up & Get ₹100</a>
+      </div>
+    </div>
+
+    <a href="https://t.me/+8h1qaOW-l3o4NzM1" class="telegram-btn">🚀 Join Now on Telegram</a>
+  </div>
 
 </body>
 </html>
