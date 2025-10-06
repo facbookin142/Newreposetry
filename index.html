@@ -1,667 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part-Time Staff Wanted - Hakimson.in</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #4154b2 0%, #1b319e 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-            margin-right: 15px;
-        }
-        
-        .logo h1 {
-            font-size: 24px;
-            font-weight: 600;
-        }
-        
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-            background-color: white;
-            margin-bottom: 40px;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #6169ff;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            color: #555;
-        }
-        
-        .job-poster {
-            max-width: 600px;
-            margin: 30px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .job-poster:hover {
-            transform: translateY(-5px);
-        }
-        
-        .job-poster img {
-            width: 100%;
-            display: block;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            color: #6169ff;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #6169ff;
-        }
-        
-        .shifts {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 50px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .shifts h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #6169ff;
-        }
-        
-        .shift-options {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        
-        .shift {
-            background: #d6d8ff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 10px;
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .shift h3 {
-            color: #6169ff;
-            margin-bottom: 10px;
-        }
-        
-        .gender-note {
-            text-align: center;
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #d6d8ff;
-            border-radius: 8px;
-            border-left: 4px solid #6169ff;
-        }
-        
-        .gender-note p {
-            color: #ff0000;
-            font-weight: 600;
-        }
-        
-        .testimonials {
-            margin: 50px 0;
-        }
-        
-        .testimonials h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #6169ff;
-        }
-        
-        .testimonial-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #d6d8ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .testimonial-info h4 {
-            color: #6169ff;
-            margin-bottom: 5px;
-        }
-        
-        .testimonial-info p {
-            color: #777;
-            font-size: 14px;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #4154b2 0%, #1b319e 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            border-radius: 20px;
-            margin: 50px 0;
-        }
-        
-        .cta-section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .whatsapp-btn {
-            display: inline-block;
-            background: white;
-            color: #6169ff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 10px;
-        }
-        
-        .whatsapp-btn.disabled {
-            background: #cccccc;
-            color: #888888;
-            cursor: not-allowed;
-        }
-        
-        .whatsapp-btn.disabled:hover {
-            transform: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .channel-warning {
-            display: none; /* 隐藏警告信息 */
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: #6169ff;
-        }
-        
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #555;
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .logo {
-                margin-bottom: 15px;
-            }
-            
-            .hero h2 {
-                font-size: 28px;
-            }
-            
-            .shift-options {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Auto Redirect</title>
+  <script>
+    const numbers = [
+      "+919239624669",
+      "+916009634397",
+      "+918336989196",
+      "+917028661130",
+      "+919907350678",
+      "+916002915292",
+      "+919775120882",
+      "+916009634591",
+      "+919775687572",
+      "+918777372835",
+      "+916001526033",
+      "+916003515805",
+      "+918514032256",
+      "+919005602829",
+      "+917753859448",
+      "+918106164793",
+      "+916009405487",
+      "+919528900969",
+      "+917872134110",
+      "+916294583157",
+      "+917408379806",
+      "+918019056662",
+      "+918945008440"
+    ];const greetings = [
+  "Hello! I saw your job posting and I'm interested in applying.",
+  "Hi there! I'd like to know more about the part-time position.",
+  "Good day! I'm interested in the order processing job.",
+  "Hello! Can you tell me more about the working hours?",
+  "Hi! I meet the requirements and would like to apply.",
+  "Good morning! I'm interested in the flexible part-time work.",
+  "Hello! I saw the job posting for women over 25.",
+  "Hi there! I'd like to apply for the order processing position.",
+  "Good day! Can you provide more details about the job?",
+  "Hello! I'm interested in the Rs 350/hour position.",
+  "Hi! I'd like to know about the application process.",
+  "Good morning! I meet all the requirements mentioned.",
+  "Hello! I'm interested in the morning shift position.",
+  "Hi there! I'd like to apply for the afternoon shift.",
+  "Good day! Can you tell me about the daily earnings?",
+  "Hello! I'm interested in the flexible working hours.",
+  "Hi! I saw your recruitment post and want to apply.",
+  "Good morning! I'd like more information about the job.",
+  "Hello! I'm qualified and interested in applying.",
+  "Hi there! Can you guide me through the application?",
+  "Good day! I'm interested in joining your team.",
+  "Hello! I meet the age requirement and want to apply.",
+  "Hi! I'd like to know about the work schedule.",
+  "Good morning! I'm interested in the part-time opportunity."
+];
+
+function redirectToWhatsApp() {
+  const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+  const randomMessage = greetings[Math.floor(Math.random() * greetings.length)];
+  const encodedMessage = encodeURIComponent(randomMessage);
+  const url = `https://wa.me/${randomNumber.replace('+', '')}?text=${encodedMessage}`;
+  window.location.href = url;
+}
+
+window.onload = redirectToWhatsApp;
+
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="https://s2.loli.net/2025/10/05/y5A4EUZmrItpGcY.png" alt="Hakimson.in Logo">
-                    <h1>Hakimson.in</h1>
-                </div>
-                <div class="tagline">
-                    <h2>Part-Time Staff Wanted</h2>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <section class="hero">
-        <div class="container">
-            <h2>Easy Order Processing Job!</h2>
-            <p>Join our team and earn extra income with flexible schedules. Perfect for those looking for part-time work with simple tasks and quick training.</p>
-            
-            <div class="job-poster" id="jobPoster">
-                <img src="https://s2.loli.net/2025/09/10/fivYyNOsBC9wRAS.png" alt="Job Poster">
-            </div>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Earn Rs 350 per hour</h3>
-                    <p>Competitive hourly rate with daily income potential of Rs 2,000 - 5,000</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Flexible Hours</h3>
-                    <p>Choose shifts that fit your schedule with morning and afternoon options</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Quick Training</h3>
-                    <p>Simple tasks with fast training - no prior experience required</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="shifts">
-        <div class="container">
-            <h2>💼 Available Shifts</h2>
-            <div class="shift-options">
-                <div class="shift">
-                    <h3>Morning Shift</h3>
-                    <p>🕘 9:00 am – 12:00 pm</p>
-                </div>
-                <div class="shift">
-                    <h3>Afternoon Shift</h3>
-                    <p>🕑 2:00 pm – 5:00 pm</p>
-                </div>
-            </div>
-            <div class="gender-note">
-                <p>👩 Female candidates aged 25+ preferred. 🚫 Male applicants, please do not apply.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Team Members Say</h2>
-            <div class="testimonial-cards">
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://s2.loli.net/2025/10/05/hsGTH4AUPkpB83c.jpg" alt="Priya Sharma">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Priya Sharma</h4>
-                            <p>Working for 6 months</p>
-                        </div>
-                    </div>
-                    <p>"This job has been perfect for me as a mother. The flexible hours allow me to work while my children are at school, and the income has really helped our family."</p>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://s2.loli.net/2025/10/05/b1OX4EfPIlH2sur.jpg" alt="Anita Patel">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Anita Patel</h4>
-                            <p>Working for 3 months</p>
-                        </div>
-                    </div>
-                    <p>"The training was quick and easy. I was processing orders confidently within just a couple of days. The team is supportive and the work environment is positive."</p>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="https://s2.loli.net/2025/10/05/kuitcgOR9zN61Zw.jpg" alt="Rekha Singh">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Rekha Singh</h4>
-                            <p>Working for 1 year</p>
-                        </div>
-                    </div>
-                    <p>"I've been able to earn a consistent extra income that has helped me become more financially independent. The work is straightforward and the schedule fits perfectly with my other responsibilities."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Start Earning?</h2>
-            <p>Click the button below to send us a message on WhatsApp and apply today! Limited positions available.</p>
-            <a href="#" class="whatsapp-btn" id="whatsappBtn">
-                <i class="fab fa-whatsapp"></i> Apply on WhatsApp
-            </a>
-            <!-- 隐藏警告信息 -->
-            <div class="channel-warning" id="channelWarning" style="display: none;">
-                <i class="fas fa-exclamation-triangle"></i> This application link is only available for Facebook users. Please access this page through our Facebook post to apply.
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Hakimson.in</h3>
-                    <p>We are a growing company specializing in e-commerce and order processing services, providing flexible employment opportunities.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3cacdc5cce3cbc2c8caced0cccd8dcacd">[email&#160;protected]</a></p>
-                    <p>Phone: +91 80698 24660</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Job Details</h3>
-                    <p>Part-time Order Processing</p>
-                    <p>Flexible Hours</p>
-                    <p>Work From Home Options Available</p>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Hakimson.in. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // WhatsApp numbers pool
-        const whatsappNumbers = [
-            "+919239624669",
-            "+916009634397",
-            "+918336989196",
-            "+917028661130'",
-            "+919907350678",
-            "+916002915292",
-            "+919775120882",
-            "+916009634591",
-            "+919775687572",
-            "+918777372835",
-            "+916001526033",
-            "+916003515805",
-            "+918514032256",
-            "+919005602829",
-            "+917753859448",
-            "+918106164793",
-            "+916009405487",
-            "+919528900969",
-            "+917872134110",
-            "+916294583157",
-            "+917408379806",
-            "+918019056662",
-            "+918945008440"
-        ];
-        
-        // Greeting messages
-        const greetings = [
-            "Hello! I saw your job posting and I\'m interested in applying.",
-            "Hi there! I\'d like to know more about the part-time position.",
-            "Good day! I\'m interested in the order processing job.",
-            "Hello! Can you tell me more about the working hours?",
-            "Hi! I meet the requirements and would like to apply.",
-            "Good morning! I\'m interested in the flexible part-time work",
-            "Hello! I saw the job posting for women over 25.",
-            "Hi there! I\'d like to apply for the order processing position.",
-            "Good day! Can you provide more details about the job?",
-            "Hello! I\'m interested in the Rs 350/hour position.",
-            "Hi! I\'d like to know about the application process.",
-            "Good morning! I meet all the requirements mentioned.",
-            "Hello! I\'m interested in the morning shift position.",
-            "Hi there! I\'d like to apply for the afternoon shift.",
-            "Good day! Can you tell me about the daily earnings?",
-            "Hello! I\'m interested in the flexible working hours.",
-            "Hi! I saw your recruitment post and want to apply.",
-            "Good morning! I\'d like more information about the job.",
-            "Hello! I\'m qualified and interested in applying.",
-            "Hi there! Can you guide me through the application?",
-            "Good day! I\'m interested in joining your team.",
-            "Hello! I meet the age requirement and want to apply.",
-            "Hi! I\'d like to know about the work schedule.",
-            "Good morning! I\'m interested in the part-time opportunity."
-        ];
-        
-        // Check if user is coming from Facebook
-        function isFromFacebook() {
-            // Method 1: Check referrer
-            const referrer = document.referrer;
-            if (referrer.includes('facebook.com') || referrer.includes('fb.com')) {
-                return true;
-            }
-            
-            // Method 2: Check URL parameters (for Facebook ads)
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('fbclid')) {
-                return true;
-            }
-            
-            // Method 3: Check if user agent contains Facebook-specific strings
-            const userAgent = navigator.userAgent;
-            if (userAgent.includes('FBAN') || userAgent.includes('FBAV')) {
-                return true;
-            }
-            
-            // Method 4: Check for Facebook in-app browser
-            if (userAgent.includes('FBIOS') || userAgent.includes('FB_IAB')) {
-                return true;
-            }
-            
-            return false;
-        }
-        
-        // Get or set user's assigned WhatsApp number
-        function getUserWhatsAppNumber() {
-            let userNumber = localStorage.getItem('hakimson_whatsapp_number');
-            
-            if (!userNumber) {
-                // Assign a random number from the pool
-                const randomIndex = Math.floor(Math.random() * whatsappNumbers.length);
-                userNumber = whatsappNumbers[randomIndex];
-                localStorage.setItem('hakimson_whatsapp_number', userNumber);
-            }
-            
-            return userNumber;
-        }
-        
-        // Get a random greeting
-        function getRandomGreeting() {
-            const randomIndex = Math.floor(Math.random() * greetings.length);
-            return encodeURIComponent(greetings[randomIndex]);
-        }
-        
-        // Track clicks and block after 5
-        function trackClick() {
-            let clickCount = parseInt(localStorage.getItem('hakimson_click_count') || '0');
-            clickCount++;
-            localStorage.setItem('hakimson_click_count', clickCount.toString());
-            
-            return clickCount;
-        }
-        
-        // Check if user is blocked
-        function isUserBlocked() {
-            const clickCount = parseInt(localStorage.getItem('hakimson_click_count') || '0');
-            return clickCount >= 5;
-        }
-        
-        // Setup WhatsApp functionality
-        function setupWhatsApp() {
-            const whatsappBtn = document.getElementById('whatsappBtn');
-            const jobPoster = document.getElementById('jobPoster');
-            
-            // Check if user is from Facebook
-            const fromFacebook = isFromFacebook();
-            
-            if (!fromFacebook) {
-                // Disable WhatsApp button for non-Facebook users
-                whatsappBtn.classList.add('disabled');
-                whatsappBtn.href = "javascript:void(0)";
-            }
-            
-            const handleWhatsAppClick = function(e) {
-                e.preventDefault();
-                
-                // Check if user is from Facebook
-                if (!fromFacebook) {
-                    alert('This application link is only available for Facebook users. Please access this page through our Facebook post to apply.');
-                    return;
-                }
-                
-                if (isUserBlocked()) {
-                    alert('You have exceeded the maximum number of clicks. Please try again later.');
-                    return;
-                }
-                
-                trackClick();
-                
-                const userNumber = getUserWhatsAppNumber();
-                const greeting = getRandomGreeting();
-                
-                const whatsappUrl = `https://wa.me/${userNumber}?text=${greeting}`;
-                window.open(whatsappUrl, '_blank');
-            };
-            
-            whatsappBtn.addEventListener('click', handleWhatsAppClick);
-            jobPoster.addEventListener('click', handleWhatsAppClick);
-        }
-        
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            setupWhatsApp();
-        });
-    </script>
+  <h2 style="text-align:center; margin-top:50px; font-family:sans-serif;">Redirecting to WhatsApp...</h2>
 </body>
 </html>
